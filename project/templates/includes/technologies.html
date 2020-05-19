@@ -1,0 +1,103 @@
+{% load static %}
+{% load wagtailimages_tags %}
+<!-- BEGIN: PAGE CONTENT -->
+<!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->
+<div class="c-content-box c-size-md c-bg-white">
+<div class="container">
+<!-- Begin: Testimonals 1 component -->
+<div class="c-content-client-logos-slider-1" data-slider="owl">
+    <!-- Begin: Title 1 component -->
+    <div class="c-content-title-1">
+        <h3 class="c-center c-font-uppercase c-font-bold">Technologies</h3>
+        <div class="c-line-center c-theme-bg"></div>
+    </div>
+    <!-- End-->
+    <!-- Begin: Owlcarousel -->
+    <div class="owl-carousel owl-theme c-theme c-owl-nav-center" data-items="5" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="1"  data-auto-play="false" data-rtl="false" data-slide-speed="5000" data-auto-play-hover-pause="true">
+        {% for tech in technologies %}
+
+        <div class="item">
+            {# <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/python-logo-inkscape.svg' %}" alt=""/></a>#}
+            <a href="">{% image tech.image max-200x300 %}</a>
+        </div>
+        {% endfor %}
+        {% comment %}
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/python-logo-inkscape.svg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/django-neg.sh.png' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/docker.svg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/java-script.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/es6.png' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/postgresql-database-services-remote-dba.png' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/MySQL.svg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/HTML5CSS3Logos.svg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/LESS_Logo.svg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/sass.sh.png' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/React_logo_wordmark.png' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href=""><img src="{% static 'jango/assets/base/img/content/logotypes/AngularJS_logo.svg.png' %}" alt=""/></a>
+        </div>
+
+        +++++++++++++====================++++++++++++++++++++
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo1.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo2.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo3.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo4.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo5.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo6.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo7.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo8.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo9.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo10.jpg' %}" alt=""/></a>
+        </div>
+        <div class="item">
+            <a href="#"><img src="{% static 'jango/assets/base/img/content/client-logos/logo11.jpg' %}" alt=""/></a>
+        </div>
+        {% endcomment %}
+
+    </div>
+    <!-- End-->
+</div>
+<!-- End-->
+</div>
+</div><!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-1 -->

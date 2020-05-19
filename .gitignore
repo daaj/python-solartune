@@ -1,0 +1,10 @@
+*.pyc
+.DS_Store
+.coverage
+htmlcov/
+notes/
+*.pid
+node_modules/
+static_root/
+media_root/
+project/static/jango/

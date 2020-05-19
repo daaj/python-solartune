@@ -1,0 +1,104 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,cyrillic-ext,greek-ext,cyrillic,latin-ext,vietnamese,greek' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Hind:400,500,300,600,700' rel='stylesheet' type='text/css'>
+        <link href="{% static 'jango/assets/plugins/socicon/socicon.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/bootstrap-social/bootstrap-social.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/animate/animate.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <!-- END GLOBAL MANDATORY STYLES -->
+
+        <!-- BEGIN: BASE PLUGINS -->
+        <link href="{% static 'jango/assets/plugins/revo-slider/css/settings.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/cubeportfolio/css/cubeportfolio.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/plugins/owl-carousel/assets/owl.carousel.css' %}" rel="stylesheet" type="text/css"/>
+        {# <link href="{% static 'jango/assets/plugins/owl-carousel/owl.theme.css' %}" rel="stylesheet" type="text/css"/>#}
+        {# <link href="{% static 'jango/assets/plugins/owl-carousel/owl.transitions.css' %}" rel="stylesheet" type="text/css"/>#}
+        <link href="{% static 'jango/assets/plugins/fancybox/jquery.fancybox.css' %}" rel="stylesheet" type="text/css"/>
+        <!-- END: BASE PLUGINS -->
+
+        <!-- BEGIN THEME STYLES -->
+        <link href="{% static 'jango/assets/base/css/plugins.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/base/css/components.css' %}" id="style_components" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'jango/assets/base/css/themes/default.css' %}" rel="stylesheet" id="style_theme" type="text/css"/>
+        <link href="{% static 'jango/assets/base/css/custom.css' %}" rel="stylesheet" type="text/css"/>
+        <!-- END THEME STYLES -->
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/solartune.css' %}">
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %} c-layout-header-fixed c-layout-header-mobile-fixed c-layout-header-fullscreen">
+        {% wagtailuserbar %}
+        {% include "includes/header.html" %}
+
+        {% block content %}{% endblock %}
+        <div class="c-layout-go2top">
+            <i class="icon-arrow-up"></i>
+        </div><!-- END: LAYOUT/FOOTERS/GO2TOP -->
+        {% include "includes/footer.html" %}
+
+        {# Global javascript #}
+        <!-- BEGIN CORE PLUGINS -->
+        <!--[if lt IE 9]>
+        <script src="{% static 'jango/assets/global/plugins/excanvas.min.js"></script>
+        <![endif]-->
+        <script src="{% static 'jango/assets/plugins/jquery.min.js' %}" type="text/javascript" type="text/javascript" ></script>
+        <script src="{% static 'jango/assets/plugins/jquery-migrate.min.js' %}" type="text/javascript" type="text/javascript" ></script>
+        <script src="{% static 'jango/assets/plugins/bootstrap/js/bootstrap.min.js' %}" type="text/javascript" type="text/javascript" ></script>
+        <script src="{% static 'jango/assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/reveal-animate/wow.min.js' %}" type="text/javascript"></script>
+        <!-- END: CORE PLUGINS -->
+        <!-- BEGIN: LAYOUT PLUGINS -->
+        <script src="{% static 'jango/assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/owl-carousel/owl.carousel.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/counterup/jquery.waypoints.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/counterup/jquery.counterup.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/plugins/fancybox/jquery.fancybox.pack.js' %}" type="text/javascript"></script>
+        <!-- END: LAYOUT PLUGINS -->
+        <!-- BEGIN: THEME SCRIPTS -->
+        <script src="{% static 'jango/assets/base/js/components.js' %}" type="text/javascript"></script>
+        <script src="{% static 'jango/assets/base/js/app.js' %}" type="text/javascript"></script>
+        <script>
+            $(document).ready(function() {
+                App.init(); // init core
+            });
+        </script>
+        <!-- END: THEME SCRIPTS -->
+        <script type="text/javascript" src="{% static 'js/solartune.js' %}"></script>
+
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>

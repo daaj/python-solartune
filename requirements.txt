@@ -1,0 +1,12 @@
+Django>=1.11,<1.12
+wagtail>=1.12,<1.13
+django-nose
+django-extensions
+factory-boy
+nose-progressive
+psycopg2
+Werkzeug
+gunicorn
+ipython
+
+django-debug-toolbar
